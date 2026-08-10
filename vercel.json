@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "buildCommand": "npm --prefix project run build",
+  "outputDirectory": "project/dist/project/browser",
+  "installCommand": "npm --prefix project install",
+  "framework": "angular",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
