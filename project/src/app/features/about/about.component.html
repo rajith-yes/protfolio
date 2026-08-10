@@ -1,0 +1,53 @@
+<section id="about" class="section-padding bg-surface">
+  <div class="container">
+    <app-section-header
+      badge="About Me"
+      title="Angular Specialist & Frontend Engineer"
+      subtitle="Combining modern frontend engineering with real-world technical troubleshooting.">
+    </app-section-header>
+
+    <div class="row align-items-center gy-4 mb-5" appScrollReveal="fade-up">
+      <!-- Main Summary Card -->
+      <div class="col-lg-12">
+        <div class="glass-card p-4 p-md-5 rounded-4 border-slate">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-8">
+              <h3 class="fs-4 fw-bold text-white mb-3">
+                Building Maintainable &amp; High-Performance Angular Applications
+              </h3>
+              <p class="text-slate-300 lead-sm mb-3">
+                I am an Angular-focused frontend developer with approximately 2 years of professional experience building scalable, responsive, and maintainable web applications using Angular, TypeScript, RxJS, REST APIs, reusable UI components, and modern frontend development practices.
+              </p>
+              <p class="text-slate-400 mb-0">
+                Alongside development, I actively participated in my company's rotating developer-support process, directly handling customer technical queries across phone, email, WhatsApp, and video channels. My development background enables me to pinpoint the root technical causes of UI, API, and integration issues quickly.
+              </p>
+            </div>
+            <div class="col-lg-4">
+              <div class="stat-callout p-4 rounded-3 text-center border border-cyan-subtle bg-slate-900">
+                <i class="bi bi-award-fill text-cyan display-5 mb-2 d-block"></i>
+                <div class="display-6 fw-bold text-white">2 Years</div>
+                <div class="text-cyan small fw-semibold text-uppercase tracking-wider">Professional Angular Experience</div>
+                <div class="mt-3 pt-3 border-top border-slate-700 text-slate-400 small">
+                  Yorosis Technologies | Angular UI Developer
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Pillar Feature Grid with Staggered Scroll Animations -->
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let item of aboutHighlights; let i = index" [appScrollReveal]="'fade-up'" [delay]="i * 80">
+        <div class="glass-card p-4 h-100 rounded-3">
+          <div class="icon-wrapper d-inline-flex align-items-center justify-content-center mb-3 rounded-3">
+            <i class="bi {{ item.icon }} text-cyan fs-4"></i>
+          </div>
+          <h4 class="fs-5 fw-bold text-white mb-2">{{ item.title }}</h4>
+          <p class="text-slate-400 small mb-0">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

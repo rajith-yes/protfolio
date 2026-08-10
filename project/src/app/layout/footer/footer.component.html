@@ -1,0 +1,32 @@
+<footer class="footer py-4 border-top border-secondary-subtle bg-surface">
+  <div class="container">
+    <div class="row align-items-center gy-3">
+      <!-- Left Column: Name & Title -->
+      <div class="col-md-6 text-center text-md-start">
+        <h5 class="mb-1 text-white fw-bold">{{ personalInfo().name }}</h5>
+        <p class="mb-0 text-cyan small fw-medium">{{ personalInfo().title }}</p>
+      </div>
+
+      <!-- Right Column: Links & Copyright -->
+      <div class="col-md-6 text-center text-md-end">
+        <div class="d-flex justify-content-center justify-content-md-end gap-3 mb-2">
+          <a [href]="personalInfo().github" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+          <a [href]="personalInfo().linkedin" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a [href]="'mailto:' + personalInfo().email" class="social-link" aria-label="Email">
+            <i class="bi bi-envelope-fill"></i>
+          </a>
+          <a [href]="'tel:' + personalInfo().phone" class="social-link" aria-label="Phone">
+            <i class="bi bi-telephone-fill"></i>
+          </a>
+        </div>
+        <p class="mb-0 text-muted small">
+          &copy; {{ currentYear }} {{ personalInfo().name }}. Built with Angular &amp; Bootstrap.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

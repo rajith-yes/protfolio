@@ -1,0 +1,117 @@
+<section id="contact" class="section-padding bg-surface">
+  <div class="container">
+    <app-section-header
+      badge="Get In Touch"
+      title="Let's Connect"
+      subtitle="Open to Angular Developer &amp; Frontend Engineering opportunities with immediate availability.">
+    </app-section-header>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Contact Direct Details Cards -->
+      <div class="col-lg-5" appScrollReveal="fade-up">
+        <div class="glass-card p-4 p-md-5 rounded-4 border-slate h-100 d-flex flex-column justify-content-between">
+          <div>
+            <h3 class="fs-4 fw-bold text-white mb-4">Contact Information</h3>
+
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="contact-icon-box rounded-3 d-flex align-items-center justify-content-center">
+                <i class="bi bi-envelope-fill text-cyan fs-5"></i>
+              </div>
+              <div>
+                <div class="small text-slate-400">Email Address</div>
+                <a [href]="'mailto:' + personalInfo().email" class="text-white fw-semibold text-decoration-none hover-cyan">
+                  {{ personalInfo().email }}
+                </a>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="contact-icon-box rounded-3 d-flex align-items-center justify-content-center">
+                <i class="bi bi-telephone-fill text-cyan fs-5"></i>
+              </div>
+              <div>
+                <div class="small text-slate-400">Phone Number</div>
+                <a [href]="'tel:' + personalInfo().phone" class="text-white fw-semibold text-decoration-none hover-cyan">
+                  {{ personalInfo().phone }}
+                </a>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="contact-icon-box rounded-3 d-flex align-items-center justify-content-center">
+                <i class="bi bi-geo-alt-fill text-cyan fs-5"></i>
+              </div>
+              <div>
+                <div class="small text-slate-400">Location</div>
+                <div class="text-white fw-semibold">
+                  {{ personalInfo().location }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Profiles & Immediate Joining -->
+          <div class="pt-4 border-top border-slate-700">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="status-dot bg-cyan"></span>
+              <span class="small fw-semibold text-cyan">Availability: {{ personalInfo().availability }}</span>
+            </div>
+
+            <div class="d-flex gap-2">
+              <a [href]="personalInfo().linkedin" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan btn-sm flex-fill rounded-3 d-inline-flex align-items-center justify-content-center gap-2">
+                <i class="bi bi-linkedin"></i> LinkedIn Profile
+              </a>
+              <a [href]="personalInfo().github" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan btn-sm flex-fill rounded-3 d-inline-flex align-items-center justify-content-center gap-2">
+                <i class="bi bi-github"></i> GitHub Profile
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Direct Mailto Form Card -->
+      <div class="col-lg-6" appScrollReveal="fade-up" [delay]="150">
+        <div class="glass-card p-4 p-md-5 rounded-4 border-slate h-100">
+          <h3 class="fs-4 fw-bold text-white mb-2">Send a Message</h3>
+          <p class="text-slate-400 small mb-4">
+            Clicking send will launch your default email client with your message pre-filled directly to {{ personalInfo().email }}.
+          </p>
+
+          <form (ngSubmit)="sendMail($event)">
+            <div class="mb-3">
+              <label for="contact-subject" class="form-label text-slate-300 small fw-medium">Subject</label>
+              <input
+                id="contact-subject"
+                type="text"
+                class="form-control custom-input rounded-3 text-white"
+                placeholder="e.g. Angular Developer Position Inquiry"
+                [(ngModel)]="subject"
+                name="subject"
+                required>
+            </div>
+
+            <div class="mb-4">
+              <label for="contact-message" class="form-label text-slate-300 small fw-medium">Message</label>
+              <textarea
+                id="contact-message"
+                class="form-control custom-input rounded-3 text-white"
+                rows="4"
+                placeholder="Write your message here..."
+                [(ngModel)]="message"
+                name="message"
+                required></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary-cyan btn-lg w-100 rounded-3 d-inline-flex align-items-center justify-content-center gap-2 fw-semibold">
+              <i class="bi bi-send-fill"></i>
+              Open Email Client to Send
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

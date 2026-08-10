@@ -1,0 +1,63 @@
+<section id="case-studies" class="section-padding bg-surface">
+  <div class="container">
+    <app-section-header
+      badge="Technical Deep Dives"
+      title="Professional Case Studies"
+      subtitle="Detailed solutions engineered for CRM automations, ad integrations, tracking, component libraries, and performance.">
+    </app-section-header>
+
+    <div class="row g-4">
+      <div class="col-lg-6" *ngFor="let cs of caseStudies(); let i = index" [appScrollReveal]="'fade-up'" [delay]="i * 100">
+        <div class="glass-card p-4 p-md-5 h-100 rounded-4 border-slate d-flex flex-column">
+          <!-- Category & Title -->
+          <div class="mb-3">
+            <span class="badge bg-cyan-subtle text-cyan px-3 py-1 rounded-pill small fw-semibold text-uppercase tracking-wider mb-2 d-inline-block">
+              {{ cs.category }}
+            </span>
+            <h3 class="fs-4 fw-bold text-white mb-2">{{ cs.title }}</h3>
+          </div>
+
+          <p class="text-slate-300 small mb-4">
+            {{ cs.overview }}
+          </p>
+
+          <!-- Component mentions highlight if present -->
+          <div *ngIf="cs.componentsMentioned && cs.componentsMentioned.length" class="mb-3 p-3 bg-slate-900 rounded-3 border border-slate-700">
+            <div class="x-small fw-bold text-cyan text-uppercase mb-2">Custom Components Developed:</div>
+            <div class="d-flex flex-wrap gap-2">
+              <span *ngFor="let comp of cs.componentsMentioned" class="badge bg-cyan-dark text-cyan font-mono px-2 py-1">
+                &lt;{{ comp }}&gt;
+              </span>
+            </div>
+          </div>
+
+          <!-- Key Highlights -->
+          <div class="mb-4">
+            <h4 class="fs-6 text-slate-400 fw-semibold mb-2">Key Engineering Highlights:</h4>
+            <ul class="ps-0 mb-0">
+              <li *ngFor="let item of cs.keyHighlights" class="d-flex align-items-start gap-2 mb-2 text-slate-300 small">
+                <i class="bi bi-check2 text-cyan flex-shrink-0 mt-1"></i>
+                <span>{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Impact callout if present -->
+          <div *ngIf="cs.impact" class="mt-auto mb-4 p-3 bg-slate-900 rounded-3 border border-cyan-subtle">
+            <div class="small fw-bold text-cyan mb-1"><i class="bi bi-graph-up-arrow me-1"></i> Impact</div>
+            <p class="text-slate-300 small mb-0">{{ cs.impact }}</p>
+          </div>
+
+          <!-- Tech Stack Tags -->
+          <div class="mt-auto pt-3 border-top border-slate-700">
+            <div class="d-flex flex-wrap gap-2">
+              <span *ngFor="let tech of cs.techStack" class="badge bg-slate-800 text-slate-300 border border-slate-700 px-2 py-1 font-mono x-small">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

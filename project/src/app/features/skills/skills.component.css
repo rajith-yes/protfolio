@@ -1,0 +1,18 @@
+.bg-main {
+  background-color: var(--color-bg-main);
+}
+
+.cat-icon-box {
+  width: 40px;
+  height: 40px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.text-cyan {
+  color: var(--color-primary);
+}
+
+.border-slate-700 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}

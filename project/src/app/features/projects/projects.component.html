@@ -1,0 +1,107 @@
+<section id="projects" class="section-padding bg-main">
+  <div class="container">
+    <app-section-header
+      badge="Featured Project"
+      title="Personal Application Showcase"
+      subtitle="Hands-on demonstration of modern Angular development, database integration, and cloud deployment.">
+    </app-section-header>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-11">
+        <div class="glass-card p-4 p-md-5 rounded-4 border-slate overflow-hidden" appScrollReveal="fade-up">
+          <div class="row align-items-center gy-4">
+            <!-- Project Description Column -->
+            <div class="col-lg-7">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-cyan-subtle text-cyan px-3 py-1 rounded-pill small fw-semibold">
+                  Angular + Supabase + Vercel
+                </span>
+              </div>
+
+              <h3 class="fs-2 fw-bold text-white mb-2">{{ featuredProject().title }}</h3>
+              <p class="text-cyan fw-medium mb-3">{{ featuredProject().subtitle }}</p>
+
+              <p class="text-slate-300 lead-sm mb-4">
+                {{ featuredProject().description }}
+              </p>
+
+              <h4 class="fs-6 text-slate-400 fw-semibold mb-3">Key Built-in Features:</h4>
+              <div class="row g-2 mb-4">
+                <div class="col-sm-6" *ngFor="let feature of featuredProject().features">
+                  <div class="d-flex align-items-center gap-2 text-slate-300 small">
+                    <i class="bi bi-check-circle-fill text-cyan"></i>
+                    <span>{{ feature }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 pt-3 border-top border-slate-700">
+                <span *ngFor="let tech of featuredProject().technologies" class="badge bg-slate-800 text-slate-200 border border-slate-700 px-3 py-2 rounded-2 font-mono">
+                  {{ tech }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Project Interactive Mockup Box -->
+            <div class="col-lg-5">
+              <div class="project-preview-card p-4 rounded-4 bg-slate-900 border border-cyan-subtle shadow-lg">
+                <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-slate-700">
+                  <div class="d-flex gap-1">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                  </div>
+                  <span class="badge bg-slate-800 text-cyan border border-slate-700 x-small font-mono">
+                    Deployed on Vercel
+                  </span>
+                </div>
+
+                <div class="preview-ui">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div>
+                      <div class="fw-bold text-white small">Task Dashboard</div>
+                      <div class="x-small text-slate-400">Overview &amp; Priority Filters</div>
+                    </div>
+                    <span class="badge bg-cyan text-dark fw-bold x-small">+ New Task</span>
+                  </div>
+
+                  <!-- Mock task items -->
+                  <div class="task-mock-item p-2 mb-2 rounded-2 bg-slate-800 border border-slate-700 d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-check-square-fill text-cyan"></i>
+                      <span class="x-small text-slate-200 fw-medium">Implement Route Guards</span>
+                    </div>
+                    <span class="badge bg-danger text-white x-small">High</span>
+                  </div>
+
+                  <div class="task-mock-item p-2 mb-2 rounded-2 bg-slate-800 border border-slate-700 d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-check-square-fill text-cyan"></i>
+                      <span class="x-small text-slate-200 fw-medium">Supabase Auth Integration</span>
+                    </div>
+                    <span class="badge bg-warning text-dark x-small">Medium</span>
+                  </div>
+
+                  <div class="task-mock-item p-2 rounded-2 bg-slate-800 border border-slate-700 d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-check-square-fill text-cyan"></i>
+                      <span class="x-small text-slate-200 fw-medium">Analytics Chart Module</span>
+                    </div>
+                    <span class="badge bg-info text-dark x-small">Normal</span>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-3 border-top border-slate-700 text-center">
+                  <div class="x-small text-slate-400">
+                    <i class="bi bi-database me-1 text-cyan"></i> Database: Supabase PostgreSQL
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

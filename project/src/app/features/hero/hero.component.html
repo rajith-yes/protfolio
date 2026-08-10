@@ -1,0 +1,133 @@
+<section id="hero" class="hero-section min-vh-100 d-flex align-items-center position-relative pt-5">
+  <!-- Background Glow Effect -->
+  <div class="hero-glow position-absolute top-50 start-0 translate-middle-y"></div>
+
+  <div class="container position-relative z-1 py-5">
+    <div class="row align-items-center gy-5">
+      <!-- Left Column: Profile Photo -> Availability Badge -> Intro Text & CTAs (Horizontally Centered Alignment) -->
+      <div class="col-lg-6 text-center text-lg-start d-flex flex-column align-items-center align-items-lg-start hero-text-col">
+        <!-- 1. Round Profile Picture Container (Strictly Horizontally Centered in Column) -->
+        <div class="profile-photo-container w-100 text-center d-flex justify-content-center justify-content-lg-center mb-3 position-relative">
+          <div class="profile-avatar-wrapper position-relative d-inline-block mx-auto">
+            <div class="profile-avatar-crop rounded-circle shadow-lg">
+              <img
+                src="rajith_pic2.jpeg"
+                alt="RAJITH S — Angular Developer"
+                class="profile-avatar-img"
+                loading="eager">
+            </div>
+
+            <!-- Rotating Outer Ring Glow -->
+            <div class="avatar-ring-glow"></div>
+
+            <!-- Floating Tech Pill 1 (Top-Right) -->
+            <span class="floating-badge badge-tr bg-slate-900 border border-cyan-subtle text-cyan shadow-lg px-3 py-1.5 rounded-pill font-mono small d-inline-flex align-items-center gap-2">
+              <i class="bi bi-code-square"></i>
+              Angular Specialist
+            </span>
+
+            <!-- Floating Tech Pill 2 (Bottom-Left) -->
+            <span class="floating-badge badge-bl bg-slate-900 border border-slate-700 text-slate-200 shadow-lg px-3 py-1.5 rounded-pill font-mono small d-inline-flex align-items-center gap-2">
+              <i class="bi bi-lightning-fill text-cyan"></i>
+              TypeScript &amp; RxJS
+            </span>
+          </div>
+        </div>
+
+        <!-- 2. Immediate Joining Badge (Strictly Horizontally Centered under image) -->
+        <div class="w-100 text-center d-flex justify-content-center justify-content-lg-center mb-3">
+          <div class="availability-badge d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill">
+            <span class="status-pulse"></span>
+            <span class="small fw-semibold text-cyan">{{ personalInfo().availability }}</span>
+          </div>
+        </div>
+
+        <!-- 3. Headline & Title -->
+        <h1 class="hero-name mb-2">
+          Hi, I'm <span class="text-gradient">{{ personalInfo().name }}</span>
+        </h1>
+
+        <h2 class="hero-title mb-3 fs-3 fw-bold text-slate-200">
+          {{ personalInfo().title }}
+        </h2>
+
+        <p class="hero-subtitle mb-4 lead text-slate-400 mx-auto mx-lg-0" style="max-width: 620px;">
+          {{ personalInfo().subtitle }}
+        </p>
+
+        <!-- 4. CTA Buttons -->
+        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-lg-start gap-3 mb-4 w-100">
+          <a
+            href="#projects"
+            (click)="scrollTo('projects', $event)"
+            class="btn btn-primary-cyan btn-lg px-4 py-3 rounded-3 d-inline-flex align-items-center gap-2 fw-semibold w-100 w-sm-auto justify-content-center">
+            View My Work
+            <i class="bi bi-arrow-right"></i>
+          </a>
+          <a
+            href="assets/documents/Rajith_S_Angular_Developer_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline-slate btn-lg px-4 py-3 rounded-3 d-inline-flex align-items-center gap-2 fw-semibold w-100 w-sm-auto justify-content-center">
+            <i class="bi bi-download"></i>
+            Download Resume
+          </a>
+        </div>
+
+        <!-- 5. Social Media Icons & Quick Contact -->
+        <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3">
+          <span class="text-slate-500 small me-2 d-none d-sm-inline">Connect with me:</span>
+          <a [href]="personalInfo().github" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+          <a [href]="personalInfo().linkedin" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a [href]="'mailto:' + personalInfo().email" class="social-icon" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+          <a [href]="'tel:' + personalInfo().phone" class="social-icon" aria-label="Phone">
+            <i class="bi bi-telephone"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Code Visual Card -->
+      <div class="col-lg-6">
+        <div class="hero-visual-wrapper position-relative mx-auto" style="max-width: 480px;">
+          <div class="code-visual-card p-4 rounded-4 shadow-lg position-relative mx-auto animate-float">
+            <!-- Window Header Controls -->
+            <div class="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom border-secondary-subtle">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="ms-auto text-slate-500 font-mono small">developer.component.ts</span>
+            </div>
+
+            <!-- Code Snippet Box -->
+            <pre class="font-mono text-slate-300 mb-0 small line-height-relaxed">
+<code><span class="token-keyword">import</span> &#123; Component, signal &#125; <span class="token-keyword">from</span> <span class="token-string">'@angular/core'</span>;
+
+<span class="token-decorator">&#64;Component</span>(&#123;
+  selector: <span class="token-string">'app-rajith'</span>,
+  standalone: <span class="token-boolean">true</span>
+&#125;)
+<span class="token-keyword">export class</span> <span class="token-class">RajithComponent</span> &#123;
+  <span class="token-property">name</span> = <span class="token-string">'RAJITH S'</span>;
+  <span class="token-property">specialty</span> = signal(<span class="token-string">'Angular &amp; TypeScript'</span>);
+  <span class="token-property">experience</span> = <span class="token-number">2</span>; <span class="token-comment">// Years</span>
+  <span class="token-property">coreSkills</span> = [
+    <span class="token-string">'Angular Signals'</span>,
+    <span class="token-string">'RxJS'</span>,
+    <span class="token-string">'REST APIs'</span>,
+    <span class="token-string">'Component Libraries'</span>
+  ];
+&#125;</code></pre>
+            <div class="card-glow-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
