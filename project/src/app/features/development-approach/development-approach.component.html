@@ -1,0 +1,29 @@
+<section id="approach" class="section-padding bg-surface">
+  <div class="container">
+    <app-section-header
+      badge="Engineering Methodology"
+      title="Development Approach &amp; Best Practices"
+      subtitle="How I ensure maintainability, code quality, and team collaboration across software iterations.">
+    </app-section-header>
+
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let p of practices; let i = index" [appScrollReveal]="'fade-up'" [delay]="i * 100">
+        <div class="glass-card p-4 h-100 rounded-3 border-slate">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="icon-box rounded-2 d-flex align-items-center justify-content-center">
+              <i class="bi {{ p.icon }} text-cyan fs-4"></i>
+            </div>
+            <h3 class="fs-5 fw-bold text-white mb-0">{{ p.title }}</h3>
+          </div>
+
+          <ul class="ps-0 mb-0">
+            <li *ngFor="let item of p.items" class="d-flex align-items-start gap-2 mb-2 text-slate-300 small">
+              <i class="bi bi-shield-check text-cyan flex-shrink-0 mt-1"></i>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

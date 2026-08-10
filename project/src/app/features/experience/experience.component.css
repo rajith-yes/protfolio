@@ -1,0 +1,49 @@
+.bg-surface {
+  background-color: var(--color-bg-surface);
+}
+
+.border-slate {
+  border-color: var(--color-border) !important;
+}
+
+.border-slate-700 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.bg-cyan-subtle {
+  background-color: rgba(56, 189, 248, 0.15);
+}
+
+.border-cyan-subtle {
+  border-color: rgba(56, 189, 248, 0.25) !important;
+}
+
+.text-cyan {
+  color: var(--color-primary);
+}
+
+.bg-slate-800 {
+  background-color: var(--color-bg-card);
+}
+
+.bg-slate-900 {
+  background-color: #0f172a;
+}
+
+.responsibility-list li {
+  list-style: none;
+  font-size: 0.975rem;
+  line-height: 1.6;
+}
+
+.support-icon-box {
+  width: 44px;
+  height: 44px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.x-small {
+  font-size: 0.825rem;
+  line-height: 1.5;
+}

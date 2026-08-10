@@ -1,0 +1,28 @@
+<section id="skills" class="section-padding bg-main">
+  <div class="container">
+    <app-section-header
+      badge="Technical Expertise"
+      title="Skills &amp; Technology Stack"
+      subtitle="Categorized frontend engineering capabilities, toolset, and development methodologies.">
+    </app-section-header>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let cat of categories(); let i = index" [appScrollReveal]="'fade-up'" [delay]="i * 80">
+        <div class="glass-card p-4 h-100 rounded-3">
+          <!-- Category Header -->
+          <div class="d-flex align-items-center gap-3 mb-3 pb-2 border-bottom border-slate-700">
+            <div class="cat-icon-box d-flex align-items-center justify-content-center rounded-2">
+              <i class="bi {{ cat.icon }} text-cyan fs-5"></i>
+            </div>
+            <h3 class="fs-5 fw-bold text-white mb-0">{{ cat.title }}</h3>
+          </div>
+
+          <!-- Skill Badges Flex Container -->
+          <div class="d-flex flex-wrap gap-2">
+            <app-skill-badge *ngFor="let skill of cat.skills" [name]="skill"></app-skill-badge>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

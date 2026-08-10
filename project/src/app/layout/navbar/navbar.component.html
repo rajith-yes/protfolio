@@ -1,0 +1,46 @@
+<header class="fixed-top header-navbar" [ngClass]="{'navbar-scrolled': isScrolled()}">
+  <nav class="navbar navbar-expand-lg navbar-dark container py-3">
+    <!-- Logo Brand -->
+    <a class="navbar-brand d-flex align-items-center fw-bold ps-0 ms-0" href="#hero" (click)="scrollTo('hero', $event)">
+      <div class="brand-text">
+        <span class="text-white brand-name fs-5">RAJITH S</span>
+        <span class="d-none d-sm-inline-block text-cyan ms-2 brand-subtitle fs-7 fw-normal">| Angular Specialist</span>
+      </div>
+    </a>
+
+    <!-- Hamburger Toggler for Mobile -->
+    <button
+      class="navbar-toggler border-0 p-2 shadow-none"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-label="Toggle navigation">
+      <i class="bi fs-4" [ngClass]="isMenuOpen() ? 'bi-x-lg text-cyan' : 'bi-list text-white'"></i>
+    </button>
+
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse" [ngClass]="{'show': isMenuOpen()}">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1 py-3 py-lg-0">
+        <li class="nav-item" *ngFor="let item of navItems">
+          <a
+            class="nav-link px-3 py-2 rounded-2 transition-all"
+            [ngClass]="{'active': activeSection() === item.id}"
+            [href]="'#' + item.id"
+            (click)="scrollTo(item.id, $event)">
+            {{ item.label }}
+          </a>
+        </li>
+        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+          <a
+            href="assets/documents/Rajith_S_Angular_Developer_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline-cyan btn-sm px-3 py-2 rounded-3 d-inline-flex align-items-center gap-2 fw-semibold w-100 w-lg-auto justify-content-center">
+            <i class="bi bi-file-earmark-arrow-down"></i>
+            Resume
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,11 @@
+<div class="section-header mb-4 mb-md-5" [ngClass]="{'text-center': centered}" appScrollReveal="fade-down">
+  <span *ngIf="badge" class="badge-tag d-inline-block px-3 py-1 mb-2 rounded-pill fw-semibold">
+    {{ badge }}
+  </span>
+  <h2 *ngIf="title" class="section-title mb-2">
+    {{ title }}
+  </h2>
+  <p *ngIf="subtitle" class="section-subtitle mx-auto mb-0" [style.max-width.px]="centered ? 650 : null">
+    {{ subtitle }}
+  </p>
+</div>
