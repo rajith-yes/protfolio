@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm --prefix project run start",
+    "build": "npm --prefix project run build",
+    "test": "npm --prefix project run test"
+  },
+  "dependencies": {
+    "@angular/cli": "^21.2.10"
+  }
+}
