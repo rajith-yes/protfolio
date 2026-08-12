@@ -247,7 +247,8 @@ export const FEATURED_PROJECT: Project = {
     'Production Deployment on Vercel'
   ],
   deploymentPlatform: 'Vercel',
-  database: 'Supabase'
+  database: 'Supabase',
+  liveUrl: 'https://project-rajith2.vercel.app'
 };
 
 export const EDUCATION_LIST: Education[] = [

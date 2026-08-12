@@ -65,3 +65,19 @@
 .x-small {
   font-size: 0.775rem;
 }
+
+.btn-primary-cyan {
+  background-color: var(--color-primary) !important;
+  color: #0b0f19 !important;
+  border: none !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.btn-primary-cyan:hover {
+  background-color: #7dd3fc !important;
+  color: #0b0f19 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
+}

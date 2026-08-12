@@ -51,9 +51,9 @@
                     <span class="dot dot-yellow"></span>
                     <span class="dot dot-green"></span>
                   </div>
-                  <span class="badge bg-slate-800 text-cyan border border-slate-700 x-small font-mono">
-                    Deployed on Vercel
-                  </span>
+                  <a [href]="featuredProject().liveUrl" target="_blank" rel="noopener noreferrer" class="badge bg-slate-800 text-cyan border border-slate-700 x-small font-mono text-decoration-none hover-cyan">
+                    <i class="bi bi-box-arrow-up-right me-1"></i> project-rajith2.vercel.app
+                  </a>
                 </div>
 
                 <div class="preview-ui">
@@ -100,6 +100,19 @@
             </div>
 
           </div>
+
+          <!-- Bottom Right Card Footer CTA -->
+          <div *ngIf="featuredProject().liveUrl" class="mt-4 pt-4 border-top border-slate-700 d-flex justify-content-end align-items-center">
+            <a
+              [href]="featuredProject().liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary-cyan btn-md px-4 py-2.5 rounded-3 d-inline-flex align-items-center gap-2 fw-semibold shadow-sm">
+              <i class="bi bi-box-arrow-up-right"></i>
+              Launch Live Demo Application
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
